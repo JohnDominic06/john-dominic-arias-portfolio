@@ -570,12 +570,34 @@ header {
     margin-bottom: 15px;
 }
 
-.experience-item p:last-child {
+.experience-item p {
     max-width: 700px;
 
     color: #6b7280;
 }
 
+
+/* EXPERIENCE HIGHLIGHTS */
+
+.experience-highlights {
+    max-width: 700px;
+
+    margin-top: 15px;
+
+    padding-left: 20px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.experience-highlights li {
+    margin-bottom: 8px;
+}
+
+.experience-highlights li::marker {
+    color: #6366f1;
+}
 
 /* =========================================
    CONTACT
