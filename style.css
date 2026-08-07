@@ -138,6 +138,19 @@ header {
 
     margin-bottom: 40px;
 }
+.hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 35px;
+    max-width: 800px;
+}
+
+.hero-highlights span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
 
 .hero-buttons {
     display: flex;
