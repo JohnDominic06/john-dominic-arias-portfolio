@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Case Documentation Workflow | John Dominic Arias
+    </title>
+
+    <meta
+        name="description"
+        content="Legal and case documentation portfolio demonstration by John Dominic Arias."
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            color: #111827;
+
+            background: #f8fafc;
+
+            line-height: 1.6;
+        }
+
+
+        /* NAVIGATION */
+
+        header {
+            background: #ffffff;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding: 18px 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+        .back-link {
+            color: #4f46e5;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 90px 30px 60px;
+        }
+
+        .label {
+            color: #6366f1;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 68px);
+
+            line-height: 1.05;
+
+            max-width: 850px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 760px;
+
+            font-size: 19px;
+
+            color: #64748b;
+        }
+
+        .demo-notice {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 10px 15px;
+
+            background: #eef2ff;
+
+            color: #4338ca;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* CASE FILE */
+
+        .case-wrapper {
+            max-width: 1000px;
+
+            margin: 20px auto 90px;
+
+            padding: 0 30px;
+        }
+
+        .case-file {
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px rgba(15, 23, 42, 0.08);
+        }
+
+        .case-header {
+            padding: 30px;
+
+            background: #111827;
+
+            color: #ffffff;
+        }
+
+        .case-header-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .case-header h2 {
+            font-size: 23px;
+        }
+
+        .sample-label {
+            padding: 7px 11px;
+
+            background: rgba(255,255,255,0.12);
+
+            border-radius: 6px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* CASE INFORMATION */
+
+        .case-info {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .info-item {
+            padding: 22px;
+
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-label {
+            color: #64748b;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 6px;
+        }
+
+        .info-value {
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* DOCUMENT CHECKLIST */
+
+        .documents {
+            padding: 30px;
+        }
+
+        .documents h3 {
+            font-size: 18px;
+
+            margin-bottom: 20px;
+        }
+
+        .document-row {
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr auto;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .document-row:last-child {
+            border-bottom: none;
+        }
+
+        .document-name {
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .document-type {
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+        .status {
+            padding: 6px 10px;
+
+            border-radius: 6px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+        }
+
+        .received {
+            background: #dcfce7;
+
+            color: #15803d;
+        }
+
+        .review {
+            background: #fef3c7;
+
+            color: #a16207;
+        }
+
+        .pending {
+            background: #f1f5f9;
+
+            color: #64748b;
+        }
+
+
+        /* WORKFLOW */
+
+        .workflow-section {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 0 30px 80px;
+        }
+
+        .workflow-section h2 {
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+        .workflow-intro {
+            max-width: 700px;
+
+            color: #64748b;
+
+            margin-bottom: 35px;
+        }
+
+        .workflow {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .workflow-step {
+            position: relative;
+
+            padding: 25px;
+
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 12px;
+        }
+
+        .step-number {
+            color: #6366f1;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+        }
+
+        .workflow-step h3 {
+            font-size: 18px;
+
+            margin-bottom: 9px;
+        }
+
+        .workflow-step p {
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+
+        /* QUALITY CONTROL */
+
+        .quality {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 0 30px 80px;
+        }
+
+        .quality-box {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+
+            padding: 35px;
+
+            background: #ffffff;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 16px;
+        }
+
+        .quality-box h2 {
+            font-size: 27px;
+
+            margin-bottom: 15px;
+        }
+
+        .quality-box p {
+            color: #64748b;
+        }
+
+        .checks {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .check {
+            display: flex;
+
+            gap: 10px;
+
+            align-items: flex-start;
+
+            font-size: 13px;
+        }
+
+        .check-icon {
+            color: #16a34a;
+
+            font-weight: 700;
+        }
+
+
+        /* SKILLS */
+
+        .skills {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 0 30px 80px;
+        }
+
+        .skills h2 {
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+        .skills p {
+            color: #64748b;
+
+            max-width: 720px;
+
+            margin-bottom: 20px;
+        }
+
+        .tools {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .tool {
+            padding: 8px 13px;
+
+            background: #eef2ff;
+
+            color: #4338ca;
+
+            border-radius: 7px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        /* CTA */
+
+        .cta {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 0 30px 100px;
+        }
+
+        .cta-box {
+            padding: 45px;
+
+            background: #111827;
+
+            color: #ffffff;
+
+            border-radius: 16px;
+
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            color: #cbd5e1;
+
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+        }
+
+        .cta-box a {
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            background: #ffffff;
+
+            color: #111827;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            .case-info {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .workflow {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .quality-box {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 16px 20px;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .case-wrapper,
+            .workflow-section,
+            .quality,
+            .skills,
+            .cta {
+                padding-left: 20px;
+
+                padding-right: 20px;
+            }
+
+            .case-info {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none;
+
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .document-row {
+                grid-template-columns: 1fr;
+
+                gap: 5px;
+            }
+
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                John Dominic Arias
+            </div>
+
+            <a
+                href="index.html#projects"
+                class="back-link"
+            >
+                ← Back to Portfolio
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <p class="label">
+            PORTFOLIO DEMONSTRATION • LEGAL SUPPORT
+        </p>
+
+        <h1>
+            Case Documentation Workflow
+        </h1>
+
+        <p class="hero-description">
+
+            A sample case-production workflow demonstrating
+            how documents, research, drafting, review, and
+            supporting evidence can be organized throughout
+            a professional case.
+
+        </p>
+
+        <div class="demo-notice">
+
+            Fictional case data — created for portfolio demonstration
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Sample Case File -->
+
+    <section class="case-wrapper">
+
+        <div class="case-file">
+
+
+            <div class="case-header">
+
+                <div class="case-header-top">
+
+                    <h2>
+                        Sample Case File
+                    </h2>
+
+                    <span class="sample-label">
+                        FICTIONAL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Case Information -->
+
+            <div class="case-info">
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        CASE TYPE
+                    </div>
+
+                    <div class="info-value">
+                        Immigration Petition
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        CASE ID
+                    </div>
+
+                    <div class="info-value">
+                        DEMO-2026-001
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        STATUS
+                    </div>
+
+                    <div class="info-value">
+                        In Review
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <div class="info-label">
+                        PRIORITY
+                    </div>
+
+                    <div class="info-value">
+                        Standard
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Documents -->
+
+            <div class="documents">
+
+                <h3>
+                    Document Checklist
+                </h3>
+
+
+                <div class="document-row">
+
+                    <div class="document-name">
+                        Identity Documentation
+                    </div>
+
+                    <div class="document-type">
+                        Supporting Evidence
+                    </div>
+
+                    <span class="status received">
+                        Received
+                    </span>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div class="document-name">
+                        Professional Records
+                    </div>
+
+                    <div class="document-type">
+                        Supporting Evidence
+                    </div>
+
+                    <span class="status received">
+                        Received
+                    </span>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div class="document-name">
+                        Recommendation Letters
+                    </div>
+
+                    <div class="document-type">
+                        Supporting Evidence
+                    </div>
+
+                    <span class="status review">
+                        Under Review
+                    </span>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div class="document-name">
+                        Research Materials
+                    </div>
+
+                    <div class="document-type">
+                        Case Research
+                    </div>
+
+                    <span class="status review">
+                        Under Review
+                    </span>
+
+                </div>
+
+
+                <div class="document-row">
+
+                    <div class="document-name">
+                        Final Supporting Documents
+                    </div>
+
+                    <div class="document-type">
+                        Evidence
+                    </div>
+
+                    <span class="status pending">
+                        Pending
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Workflow -->
+
+    <section class="workflow-section">
+
+        <p class="label">
+            CASE PRODUCTION
+        </p>
+
+        <h2>
+            From intake to final delivery.
+        </h2>
+
+        <p class="workflow-intro">
+
+            A structured workflow helps keep case materials
+            organized, makes outstanding items easier to
+            identify, and supports consistent document
+            production.
+
+        </p>
+
+
+        <div class="workflow">
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Case Intake
+                </h3>
+
+                <p>
+                    Review case information, identify
+                    requirements, and establish the
+                    documentation checklist.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Document Collection
+                </h3>
+
+                <p>
+                    Organize supporting documents and
+                    identify missing or outstanding materials.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Research
+                </h3>
+
+                <p>
+                    Gather relevant information and organize
+                    research materials for the case.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Drafting
+                </h3>
+
+                <p>
+                    Prepare case-related drafts and supporting
+                    documentation based on the available materials.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <h3>
+                    Quality Review
+                </h3>
+
+                <p>
+                    Review documents for completeness,
+                    consistency, formatting, and required
+                    supporting materials.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    06
+                </div>
+
+                <h3>
+                    Final Delivery
+                </h3>
+
+                <p>
+                    Organize finalized materials and prepare
+                    the case package for the next stage.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Quality Control -->
+
+    <section class="quality">
+
+        <div class="quality-box">
+
+
+            <div>
+
+                <p class="label">
+                    QUALITY CONTROL
+                </p>
+
+                <h2>
+                    Details matter.
+                </h2>
+
+                <p>
+
+                    Document-heavy workflows require careful
+                    organization and consistent review. A
+                    structured checklist helps reduce avoidable
+                    omissions and keeps case materials easier
+                    to manage.
+
+                </p>
+
+            </div>
+
+
+            <div class="checks">
+
+                <div class="check">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Verify required documents are accounted for
+                    </span>
+
+                </div>
+
+
+                <div class="check">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Check document naming and organization
+                    </span>
+
+                </div>
+
+
+                <div class="check">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Review supporting evidence for completeness
+                    </span>
+
+                </div>
+
+
+                <div class="check">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Maintain clear case status and task tracking
+                    </span>
+
+                </div>
+
+
+                <div class="check">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Prepare organized materials for final review
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Skills -->
+
+    <section class="skills">
+
+        <p class="label">
+            TOOLS & CAPABILITIES
+        </p>
+
+        <h2>
+            Legal support capabilities.
+        </h2>
+
+        <p>
+
+            This demonstration represents the type of
+            documentation, research, and case-production
+            support I can provide to legal professionals
+            and other document-intensive teams.
+
+        </p>
+
+
+        <div class="tools">
+
+            <span class="tool">
+                Case Documentation
+            </span>
+
+            <span class="tool">
+                Legal Research
+            </span>
+
+            <span class="tool">
+                Document Management
+            </span>
+
+            <span class="tool">
+                Evidence Organization
+            </span>
+
+            <span class="tool">
+                Drafting Support
+            </span>
+
+            <span class="tool">
+                Google Workspace
+            </span>
+
+            <span class="tool">
+                DocuSign
+            </span>
+
+            <span class="tool">
+                Quality Control
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="cta-box">
+
+            <h2>
+                Need reliable case support?
+            </h2>
+
+            <p>
+
+                I can help organize documents, research,
+                administrative tasks, and case-production
+                workflows so your team can focus on the work
+                that matters most.
+
+            </p>
+
+            <a href="index.html#contact">
+                Let's Work Together
+            </a>
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
