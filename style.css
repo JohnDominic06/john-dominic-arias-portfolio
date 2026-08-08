@@ -345,59 +345,6 @@ header {
     font-weight: 700;
 }
 
-/* =========================================
-   SKILLS
-   ========================================= */
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.skill-category {
-    padding: 30px;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    background: #ffffff;
-}
-
-.skill-number {
-    font-size: 13px;
-    font-weight: 700;
-    color: #6366f1;
-    margin-bottom: 12px;
-}
-
-.skill-category h3 {
-    font-size: 21px;
-    color: #111827;
-    margin-bottom: 12px;
-}
-
-.skill-category > p:not(.skill-number) {
-    max-width: 600px;
-    color: #6b7280;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-tags span {
-    padding: 7px 11px;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    background: #f9fafb;
-    color: #374151;
-    font-size: 13px;
-}
-
 
 /* =========================================
    PROJECTS
@@ -735,4 +682,56 @@ footer p {
         padding: 18px 20px;
     }
 
+}
+/* =========================================
+   SKILLS
+   ========================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.skill-category {
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.skill-number {
+    font-size: 13px;
+    font-weight: 700;
+    color: #6366f1;
+    margin-bottom: 12px;
+}
+
+.skill-category h3 {
+    font-size: 21px;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.skill-category > p:not(.skill-number) {
+    max-width: 600px;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    padding: 7px 11px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 13px;
 }
