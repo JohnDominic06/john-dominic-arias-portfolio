@@ -762,3 +762,162 @@ footer p {
     color: #374151;
     font-size: 13px;
 }
+/* =========================================
+   MOBILE RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------
+       GENERAL
+       ----------------------------------------- */
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+
+
+    /* -----------------------------------------
+       NAVIGATION
+       ----------------------------------------- */
+
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+       ----------------------------------------- */
+
+    .hero {
+        padding: 100px 20px 80px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        line-height: 1.05;
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+    /* -----------------------------------------
+       SERVICES
+       ----------------------------------------- */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+
+
+    /* -----------------------------------------
+       SKILLS
+       ----------------------------------------- */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .skill-category {
+        padding: 24px;
+    }
+
+
+    /* -----------------------------------------
+       PROJECTS
+       ----------------------------------------- */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+
+    /* -----------------------------------------
+       EXPERIENCE
+       ----------------------------------------- */
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding-bottom: 32px;
+    }
+
+    .experience-date {
+        margin-bottom: 4px;
+    }
+
+    .experience-item h3 {
+        font-size: 22px;
+    }
+
+
+    /* -----------------------------------------
+       CONTACT
+       ----------------------------------------- */
+
+    .contact-section {
+        padding: 90px 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 44px;
+        line-height: 1.1;
+        letter-spacing: -1.5px;
+    }
+
+    .contact-section > p:not(.section-label) {
+        font-size: 16px;
+    }
+
+    .contact-section .btn {
+        display: block;
+        width: fit-content;
+        margin: 10px auto;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+       ----------------------------------------- */
+
+    footer {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+}
