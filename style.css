@@ -581,54 +581,63 @@ header {
 
 .contact-section {
     text-align: center;
-
     padding: 120px 20px;
+    background: #111827;
+    color: #ffffff;
+}
 
-    border-top: 1px solid #e5e7eb;
-
-    background: #f8faff;
+.contact-section .section-label {
+    color: #818cf8;
+    margin-bottom: 24px;
 }
 
 .contact-section h2 {
-    font-size: 48px;
-
+    max-width: 850px;
+    margin: 0 auto 28px;
+    font-size: 64px;
     line-height: 1.1;
-
-    color: #111827;
-
-    margin: 15px auto 25px;
-
-    max-width: 750px;
+    letter-spacing: -2px;
+    color: #ffffff;
 }
 
 .contact-section > p:not(.section-label) {
     max-width: 650px;
-
-    margin: 0 auto 30px;
-
-    color: #6b7280;
-
+    margin: 0 auto 40px;
+    color: #cbd5e1;
+    font-size: 17px;
     line-height: 1.7;
 }
 
-.contact-actions {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
+.contact-section .btn {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 6px;
+    transition: all 0.2s ease;
 }
 
-.secondary-btn {
+.contact-section .primary-btn {
     background: #ffffff;
-
     color: #111827;
-
-    border: 1px solid #d1d5db;
 }
 
+.contact-section .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section .secondary-btn {
+    border: 1px solid #475569;
+    color: #ffffff;
+    background: transparent;
+}
+
+.contact-section .secondary-btn:hover {
+    background: #1f2937;
+    transform: translateY(-2px);
+}
 
 /* =========================================
    FOOTER
